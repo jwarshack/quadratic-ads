@@ -1,16 +1,26 @@
 import './App.css';
-import { Box, Text} from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
 import Navbar from './components/Navbar';
-import AdContainer from './components/AdContainer';
+import Showcase from './components/Showcase';
+import Ads from './components/Ads';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
 
 function App() {
   return (
-    <Box p={10}>
-      <Navbar/>
-      <AdContainer/>
-    </Box>
+    <Router>
+      <Box p={10}>
+        <Navbar/>
+        <Box>
+          <Routes>
+            <Route exact path="/" element={<Showcase/>}/>
+            <Route path="/ads" element={<Ads/>}/>
+          </Routes>
+        </Box>
+      </Box>
+    </Router>
+
   );
 }
 
