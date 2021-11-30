@@ -54,5 +54,9 @@ contract QuadraticPosts {
     function getPost(uint256 _id) public view returns (Post memory) {
         return posts[_id];
     }
+    
+    function getUserLikes(uint256 _id) public view returns (uint256) {
+        return idToUserLikes[_id][msg.sender];
+    }
 
 }
