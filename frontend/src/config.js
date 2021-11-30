@@ -1,4 +1,4 @@
-export const contractAddress = "0x5e2A922B213C5b0716830e102241a51a54216910"
+export const contractAddress = "0xD9B516501a10eaeb145e3267E6810546960b8798"
 export const contractABI = [
   {
     "anonymous": false,
@@ -22,7 +22,7 @@ export const contractABI = [
         "type": "address"
       }
     ],
-    "name": "PostCreated",
+    "name": "AdCreated",
     "type": "event"
   },
   {
@@ -41,8 +41,55 @@ export const contractABI = [
         "type": "address"
       }
     ],
-    "name": "PostLiked",
+    "name": "AdLiked",
     "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "adCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "ads",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "uri",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "creator",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "likes",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
   },
   {
     "inputs": [
@@ -52,7 +99,7 @@ export const contractABI = [
         "type": "string"
       }
     ],
-    "name": "createPost",
+    "name": "createAd",
     "outputs": [],
     "stateMutability": "payable",
     "type": "function"
@@ -65,7 +112,7 @@ export const contractABI = [
         "type": "uint256"
       }
     ],
-    "name": "getPost",
+    "name": "getAd",
     "outputs": [
       {
         "components": [
@@ -90,7 +137,7 @@ export const contractABI = [
             "type": "uint256"
           }
         ],
-        "internalType": "struct QuadraticPosts.Post",
+        "internalType": "struct QuadraticAds.Ad",
         "name": "",
         "type": "tuple"
       }
@@ -118,19 +165,6 @@ export const contractABI = [
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "likeFee",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -138,52 +172,18 @@ export const contractABI = [
         "type": "uint256"
       }
     ],
-    "name": "likePost",
+    "name": "likeAd",
     "outputs": [],
     "stateMutability": "payable",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "postCount",
+    "name": "likeFee",
     "outputs": [
       {
         "internalType": "uint256",
         "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "posts",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "id",
-        "type": "uint256"
-      },
-      {
-        "internalType": "string",
-        "name": "uri",
-        "type": "string"
-      },
-      {
-        "internalType": "address",
-        "name": "creator",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "likes",
         "type": "uint256"
       }
     ],

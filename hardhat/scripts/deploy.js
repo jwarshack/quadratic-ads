@@ -3,12 +3,12 @@ const hre = require("hardhat");
 
 async function main() {
 
-  const QuadraticPosts = await hre.ethers.getContractFactory("QuadraticPosts");
-  const quadraticPosts = await QuadraticPosts.deploy();
+  const QuadraticAds = await hre.ethers.getContractFactory("QuadraticAds");
+  const quadraticAds = await QuadraticAds.deploy();
 
-  await quadraticPosts.deployed();
+  await quadraticAds.deployed();
 
-  console.log("Quadratic Posts deployed to:", quadraticPosts.address);
+  console.log("Quadratic Ads deployed to:", quadraticAds.address);
 }
 
 

@@ -8,12 +8,12 @@ import { contractAddress, contractABI } from '../config'
 
 
 
-export default function Post({ post }) {
+export default function Ad({ ad }) {
 
     const [errorMsg, setErrorMsg] = useState()
 
 
-    async function likePost(id) {
+    async function likeAd(id) {
         try {
             await window.ethereum.request({ method: 'eth_requestAccounts' })
             const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -37,7 +37,7 @@ export default function Post({ post }) {
             console.log(userLikes+1)
 
 
-            const tx = await contract.likePost(id, { value: price })
+            const tx = await contract.likeAd(id, { value: price })
             await tx.wait()
 
 
@@ -49,8 +49,8 @@ export default function Post({ post }) {
     }
     return (
         <VStack textAlign="center" outline="1px">
-            <Image src={post.uri} h={500}></Image>
-            <Button onClick={() => likePost(post.id)}><AiOutlineHeart/><Text ml={2}>{post.likes}</Text></Button>
+            <Image src={ad.uri} h={500}></Image>
+            <Button onClick={() => likeAd(ad.id)}><AiOutlineHeart/><Text ml={2}>{ad.likes}</Text></Button>
             {
                 errorMsg && (
                     <Text>{errorMsg}</Text>

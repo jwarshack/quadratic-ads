@@ -1,4 +1,4 @@
-import { VStack, Button, Image } from '@chakra-ui/react'
+import { VStack, Button, Image, Text } from '@chakra-ui/react'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { ethers } from 'ethers'
@@ -10,6 +10,7 @@ const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
 
 export default function Upload() {
     const [fileToUpload, setFileToUpload] = useState()
+    const [errorMsg, setErrorMsg] = useState()
 
     async function onChange(e) {
         const file = e.target.files[0]
@@ -24,6 +25,7 @@ export default function Upload() {
             setFileToUpload(url)
         } catch (err) {
             console.log('Error uploading file: ', err)
+            setErrorMsg(err.message)
         }
     }
 
@@ -35,11 +37,12 @@ export default function Upload() {
 
             const contract = new ethers.Contract(contractAddress, contractABI, signer)
 
-            const tx = await contract.createPost(fileToUpload)
+            const tx = await contract.createAd(fileToUpload)
             await tx.wait()
 
         } catch (err) {
             console.log(err)
+            setErrorMsg(err.message)
         }
 
 
@@ -56,6 +59,9 @@ export default function Upload() {
                 )
             }
             <Button onClick={uploadFile}>Upload</Button>
+            {errorMsg && (
+                <Text>{errorMsg}</Text>
+            )}
         </VStack>
     )
 }
