@@ -28,7 +28,7 @@ export default function Ad({ ad }) {
 
             let price
 
-            if (userLikes == 0) {
+            if (userLikes === 0) {
                 price = likeFee
             } else {
                 price = likeFee * (userLikes+1)

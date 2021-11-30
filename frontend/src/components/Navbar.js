@@ -1,7 +1,7 @@
 import React from 'react'
 import { Flex, Heading, Text, Link, Button } from '@chakra-ui/react'
 import {AiFillTwitterCircle, AiFillGithub}from "react-icons/ai"
-import { Link as RouterLink, Route } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function Navbar() {
     return (

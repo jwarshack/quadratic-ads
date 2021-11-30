@@ -1,6 +1,6 @@
 import { VStack, Button, Image, Text } from '@chakra-ui/react'
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ethers } from 'ethers'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
 
