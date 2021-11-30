@@ -1,8 +1,8 @@
 import './App.css';
 import { Box } from "@chakra-ui/react"
 import Navbar from './components/Navbar';
-import Showcase from './components/Showcase';
-import Ads from './components/Ads';
+import Feed from './components/Feed';
+import Upload from './components/Upload';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
@@ -14,8 +14,8 @@ function App() {
         <Navbar/>
         <Box>
           <Routes>
-            <Route exact path="/" element={<Showcase/>}/>
-            <Route path="/ads" element={<Ads/>}/>
+            <Route exact path="/" element={<Feed/>}/>
+            <Route path="/upload" element={<Upload/>}/>
           </Routes>
         </Box>
       </Box>

@@ -13,8 +13,8 @@ export default function Navbar() {
                 <Link fontSize="3xl" as="a" href="https://github.com/jwarshack/quadratic-ads" target="_blank" rel="noopener noreferrer"><AiFillGithub/></Link>
             </Flex>
             <Flex justify="center">
-                <RouterLink to="/"><Button as="a" bg="none" w={100}>Showcase</Button></RouterLink>
-                <RouterLink to="/ads"><Button as="a" bg="none" w={100}>Ads</Button></RouterLink>
+                <RouterLink to="/"><Button as="a" bg="none" w={100}>Feed</Button></RouterLink>
+                <RouterLink to="/upload"><Button as="a" bg="none" w={100}>Upload</Button></RouterLink>
             </Flex>
         </Flex>
 
